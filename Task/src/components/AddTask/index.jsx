@@ -1,9 +1,9 @@
 import React from 'react'
 import './style.css'
 import { useForm } from 'react-hook-form'
-import axios from 'axios';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import axiosInstance from '../helper/axiosInstance';
 
 const AddTask = ({
     task,
@@ -19,7 +19,7 @@ const AddTask = ({
             parent_task = task
         }
         try {
-            const { data } = await axios.post("http://18.208.183.190/api/tasks/", {
+            const { data } = await axiosInstance.post({
                 title,
                 due,
                 parent_task,
@@ -30,7 +30,7 @@ const AddTask = ({
                     toastId: 'success1'
                 })
                 reset()
-                setUpdate(!update)
+                setUpdate(update)
             }
 
         } catch (error) {

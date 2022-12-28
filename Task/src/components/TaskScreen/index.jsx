@@ -1,6 +1,6 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import AddTask from '../AddTask'
+import axiosInstance from '../helper/axiosInstance'
 import ShowTask from '../ShowTask'
 import './style.css'
 
@@ -10,7 +10,7 @@ const TaskScreen = () => {
     const [update, setUpdate] = useState(false)
     useEffect(() => {
         const fetchData = async () => {
-            const { data } = await axios.get("http://18.208.183.190/api/tasks/")
+            const { data } = await axiosInstance.get()
             setTask(data)
         }
         fetchData()
