@@ -7,13 +7,14 @@ import './style.css'
 const TaskScreen = () => {
     const [addTask, setAddTask] = useState(false)
     const [task, setTask] = useState([])
+    const [update, setUpdate] = useState(false)
     useEffect(() => {
         const fetchData = async () => {
             const { data } = await axios.get("http://18.208.183.190/api/tasks/")
             setTask(data)
         }
         fetchData()
-    }, [])
+    }, [update])
     return (
         <>
             <div className="task-screen">
@@ -40,7 +41,9 @@ const TaskScreen = () => {
 
                         {
                             addTask ?
-                                <AddTask task={task} setAddTask={setAddTask} /> :
+                                <AddTask task={task} setAddTask={setAddTask}
+                                    update={update}
+                                    setUpdate={setUpdate} /> :
                                 <ShowTask task={task} />
 
                         }

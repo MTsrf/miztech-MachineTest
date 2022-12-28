@@ -5,7 +5,11 @@ import axios from 'axios';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
-const AddTask = ({ task, setAddTask }) => {
+const AddTask = ({
+    task,
+    setAddTask,
+    setUpdate,
+    update }) => {
     const [error, setError] = useState()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = async (formdata) => {
@@ -26,6 +30,7 @@ const AddTask = ({ task, setAddTask }) => {
                     toastId: 'success1'
                 })
                 reset()
+                setUpdate(!update)
             }
 
         } catch (error) {
