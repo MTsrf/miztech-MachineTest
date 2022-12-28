@@ -1,0 +1,61 @@
+.addtask-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.addtask-content {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: var(--second-shadow);
+    padding: 40px 0 20px 0;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid rgb(212, 206, 206);
+    border-radius: 3px;
+    margin: auto;
+    gap: 15px;
+    padding: 20px;
+    box-shadow: var(--second-shadow);
+}
+
+
+
+.input-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-field>label {
+    width: 100px;
+}
+
+.input-field>input {
+    flex: 1;
+    border-radius: 3px;
+    padding: 3px;
+    border: 1px solid #d1d5db;
+    background-color: #f0f9ff;
+    padding-left: 10px;
+    outline: none;
+}
+
+.input-field>select {
+    flex: 1;
+    border-radius: 3px;
+    padding: 4px;
+    border: 1px solid #d1d5db;
+    background-color: #f0f9ff;
+    outline: none;
+}
+
+.error-form {
+    font-size: 8px;
+    color: red;
+    padding-left: 100px;
+}
